@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 20th Birthday Windi!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #fdf2f2;
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+        .font-romantic {
+            font-family: 'Dancing Script', cursive;
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .photo-frame {
+            border: 8px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .photo-frame:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        /* Floating hearts animation */
+        .heart {
+            position: absolute;
+            color: #ff8fa3;
+            animation: float 4s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center">
+
+    <!-- Kontrol Musik -->
+    <div id="music-player" class="fixed bottom-5 right-5 z-50">
+        <div class="glass-card p-3 shadow-lg flex items-center space-x-3">
+            <div class="text-xs">🎵 Laufey - From the Start</div>
+            <button onclick="toggleMusic()" id="playBtn" class="bg-pink-400 text-white p-2 rounded-full hover:bg-pink-500 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </button>
+        </div>
+        <div id="youtube-embed" style="display:none"></div>
+    </div>
+
+    <!-- Header -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-5 fade-in">
+        <h1 class="text-5xl md:text-7xl font-romantic text-pink-500 mb-4">Happy 20th Birthday</h1>
+        <h2 class="text-3xl md:text-4xl font-romantic text-pink-400 mb-8">Windi Yuliyanti</h2>
+        <div class="w-24 h-1 bg-pink-200 mb-8"></div>
+        <p class="max-w-md text-lg italic text-gray-500">"You're the melody I can't stop humming..."</p>
+        <div class="mt-12 animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Galeri Foto -->
+    <section class="max-w-4xl w-full px-5 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="photo-frame bg-white p-2 transform -rotate-2">
+                <img src="18015.jpg" alt="Windi & Jay" class="w-full h-80 object-cover">
+                <p class="text-center mt-2 font-romantic text-xl">Us ❤️</p>
+            </div>
+            <div class="photo-frame bg-white p-2 transform rotate-3 mt-8">
+                <img src="18030.webp" alt="Windi Silly" class="w-full h-80 object-cover">
+                <p class="text-center mt-2 font-romantic text-xl">Momen Lucu</p>
+            </div>
+            <div class="photo-frame bg-white p-2 transform -rotate-1 md:col-span-2 lg:col-span-1">
+                <img src="18018.jpg" alt="Windi Cinema" class="w-full h-80 object-cover">
+                <p class="text-center mt-2 font-romantic text-xl">Movie Date</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pesan Utama -->
+    <section class="max-w-2xl w-full px-5 py-20 text-center">
+        <div class="glass-card p-10 shadow-xl relative">
+            <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-pink-400 text-white px-6 py-2 rounded-full text-sm uppercase tracking-widest">
+                My Wine ❤️
+            </div>
+            
+            <p class="text-xl md:text-2xl leading-relaxed text-gray-700 font-medium">
+                "Happy Birthday My Wine ❤️"
+            </p>
+            
+            <div class="space-y-6 mt-8 text-left text-gray-600 leading-relaxed">
+                <p>
+                    Pertama, aku ucapkan terima kasih banyak untuk kasih sayang yang kamu beri selama ini, untuk waktu yang kamu luangin selama ini, dan untuk semua hal yang pernah kamu lakuin selama ini. Aku merasa sangat bersyukur bisa jadi orang yang kamu pilih untuk hadir di kehidupanmu.
+                </p>
+                
+                <p>
+                    Melihat kamu tumbuh dan sekarang memasuki usia 20 tahun adalah hal yang luar biasa buat aku. Kamu adalah sosok yang hebat, kuat, dan selalu punya cara untuk buat aku tersenyum meskipun hari-hariku sedang berat.
+                </p>
+
+                <p>
+                    Maaf aku cuma bisa berdoa dan berharap semoga di usia kamu sekarang, kamu bisa gapai keinginan atau mimpi kamu, semoga di beri kesehatan lahir batin, semoga di lapangkan rezekinya, dan semoga selamanya kita bersama.
+                </p>
+
+                <p class="italic text-center font-semibold pt-6 text-pink-600 border-t border-pink-100">
+                    "Tetap jadi perempuan yang aku kenal ya, jangan pernah bosan dengan ku hanya karena cara mencintaiku yang terkesan biasa saja, tapi di balik itu semua, percayalah sesering apa aku memikirkan mu dalam diam."
+                </p>
+            </div>
+
+            <div class="mt-10 font-romantic text-3xl text-pink-500">
+                With Love, Jay
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 text-gray-400 text-sm">
+        &copy; 2025 Made with Love for Windi
+    </footer>
+
+    <script>
+        // Efek hati melayang
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 300);
+
+        // Fungsi musik
+        let isPlaying = false;
+        function toggleMusic() {
+            const btn = document.getElementById('playBtn');
+            const container = document.getElementById('youtube-embed');
+            
+            if (!isPlaying) {
+                // Laufey - From the Start
+                container.innerHTML = '<iframe width="1" height="1" src="https://www.youtube.com/embed/S_P7Lp_SST8?autoplay=1" frameborder="0" allow="autoplay"></iframe>';
+                btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`;
+                isPlaying = true;
+            } else {
+                container.innerHTML = '';
+                btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`;
+                isPlaying = false;
+            }
+        }
+    </script>
+</body>
+</html>
+
